@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="03c802398c46483a83393b629794a2f9" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="PrikolModel.Categories" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrikolModel.Manufacturers" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrikolModel.Materials" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrikolModel.MeasureUnits" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrikolModel.Products" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrikolModel.ProductsMaterials" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrikolModel.Providers" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrikolModel.Roles" Width="1.5" PointX="5.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrikolModel.Users" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="PrikolModel.FK_products_categories" ManuallyRouted="false" />
+        <AssociationConnector Association="PrikolModel.FK_products_manufacturers" ManuallyRouted="false" />
+        <AssociationConnector Association="PrikolModel.FK_ProductsMaterials_Materials" ManuallyRouted="false" />
+        <AssociationConnector Association="PrikolModel.FK_products_measure_units" ManuallyRouted="false" />
+        <AssociationConnector Association="PrikolModel.FK_products_providers" ManuallyRouted="false" />
+        <AssociationConnector Association="PrikolModel.FK_ProductsMaterials_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="PrikolModel.FK_users_roles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

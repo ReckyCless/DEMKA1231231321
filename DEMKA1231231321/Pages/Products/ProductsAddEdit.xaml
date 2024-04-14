@@ -1,0 +1,90 @@
+﻿<Page x:Class="DEMKA1231231321.Pages.Products.ProductsAddEdit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DEMKA1231231321.Pages.Products"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Продукты. Добавление">
+
+    <Grid Background="{StaticResource colorPrimary}">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                <!-- Column 1 !-->
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+                    <StackPanel>
+                        <TextBlock Text="Артикул"/>
+                        <TextBox x:Name="txtArticle" Text="{Binding article}" MaxLength="6" PreviewTextInput="Text_PreviewTextInput"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Название"/>
+                        <TextBox x:Name="txtTitle" Text="{Binding title}" PreviewTextInput="Text_PreviewTextInput"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Макс. скидка"/>
+                        <TextBox x:Name="txtMaxDiscount" Text="{Binding max_discount}" PreviewTextInput="Number_PreviewTextInput" PreviewKeyDown="Space_PreviewKeyDown"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Текущая скидка"/>
+                        <TextBox x:Name="txtCurrentDiscount" Text="{Binding current_discount}" PreviewTextInput="Number_PreviewTextInput" PreviewKeyDown="Space_PreviewKeyDown"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Производитель"/>
+                        <ComboBox x:Name="cmbManufacturer" SelectedItem="{Binding Manufacturers}" DisplayMemberPath="name"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Поставщик"/>
+                        <ComboBox x:Name="cmbProvider" SelectedItem="{Binding Providers}" DisplayMemberPath="name"/>
+                    </StackPanel>
+                </StackPanel>
+                <!-- Column 2 !-->
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+                    <StackPanel>
+                        <TextBlock Text="Категория"/>
+                        <ComboBox x:Name="cmbCategories" SelectedItem="{Binding Categories}" DisplayMemberPath="name"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Ед. измерения"/>
+                        <ComboBox x:Name="cmbMeasureUnit" SelectedItem="{Binding MeasureUnits}" DisplayMemberPath="name"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Кол-во на складе"/>
+                        <TextBox x:Name="txtCount" Text="{Binding count}" PreviewTextInput="Number_PreviewTextInput" PreviewKeyDown="Space_PreviewKeyDown"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Описание"/>
+                        <TextBox x:Name="txtDescription" Text="{Binding description}" MaxHeight="100" MinHeight="15" Height="auto" TextWrapping="Wrap" PreviewTextInput="Text_PreviewTextInput"/>
+                    </StackPanel>
+                </StackPanel>
+                <!-- Column 3 !-->
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+                    <StackPanel>
+                        <TextBlock Text="Материалы"/>
+                        <ComboBox x:Name="cmbMaterials" SelectionChanged="cmbMaterials_SelectionChanged" DisplayMemberPath="name"/>
+                        <DataGrid x:Name="dtgrMaterials" Width="150" Height="150" HorizontalAlignment="Center" AutoGenerateColumns="False" SelectionMode="Single" CanUserAddRows="True" CanUserDeleteRows="True" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Название" Binding="{Binding name}" Width="150"/>
+                            </DataGrid.Columns> 
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Удалить" Click="DeleteMaterial_Click"/>
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+                        </DataGrid>
+                    </StackPanel>
+                </StackPanel>
+                <!-- Column 3 !-->
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+                    <StackPanel>
+                        <Border Width="150" Height="150" BorderThickness="1" BorderBrush="{StaticResource colorAccent}">
+                            <Image x:Name="imagePreview"></Image>
+                        </Border>
+                        <Button Content="Выбрать..." x:Name="btnSelectImage" Click="btnSelectImage_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="btnSave" Content="Сохранить" Width="300" Click="btnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

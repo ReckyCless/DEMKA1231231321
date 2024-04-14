@@ -1,0 +1,12 @@
+﻿<Window x:Class="DEMKA1231231321.Windows.QRWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DEMKA1231231321.Windows"
+        mc:Ignorable="d"
+        Title="Окно QR кода" Height="300" Width="300" MinHeight="300" MinWidth="300" Loaded="Window_Loaded">
+    <Grid>
+        <Image Height="250" Width="250" x:Name="imageQR" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,35,0"/>
+    </Grid>
+</Window>
